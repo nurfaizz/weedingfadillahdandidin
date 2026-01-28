@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wedding of Dea & Solihin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #eee;
+        overflow-x: hidden;
+      }
+
+      section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        position: relative;
+        scroll-snap-align: start;
+      }
+
+      /* ========== POHON KELAPA PER SLIDE ========== */
+      .tree-coconut {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 140px;
+        z-index: 20;
+        transform-origin: bottom center;
+        animation: angin-coconut 6s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* ========== COVER ========== */
+      #cover {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover;
+        color: #fff;
+        text-align: center;
+        flex-direction: column;
+      }
+      #cover h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+      #cover h2 {
+        font-weight: 300;
+        letter-spacing: 2px;
+      }
+      .btn {
+        margin-top: 30px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 30px;
+        background: #a65b4b;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 2;
+      }
+      /* ========== SLIDE 2 SUPER PREMIUM LUXURY ========== */
+      #slide2 {
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.55)),
+          url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover no-repeat;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* ===== FOTO FRAME ROYAL ===== */
+      #slide2 .frame {
+        width: 310px;
+        padding: 18px;
+        border-radius: 170px 170px 30px 30px;
+        background: linear-gradient(135deg, #f7e7b4, #d6b36a, #f7e7b4);
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.45),
+          inset 0 0 0 3px rgba(255, 255, 255, 0.5);
+        margin-bottom: 40px;
+        z-index: 2;
+      }
+
+      #slide2 .frame img {
+        width: 100%;
+        border-radius: 150px 150px 24px 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ===== AYAT GLASS ULTRA PREMIUM ===== */
+      #slide2 .ayat {
+        max-width: 780px;
+        font-size: 18px;
+        line-height: 2;
+        color: #1e1e1e;
+        background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.25));
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        padding: 30px 34px;
+        border-radius: 26px;
+        box-shadow:
+          0 15px 45px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Glow tipis elegan */
+      #slide2 .ayat::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        background: linear-gradient(120deg, rgba(255, 215, 130, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 215, 130, 0.5));
+        z-index: -1;
+        opacity: 0.6;
+      }
+
+      /* Ayat reference */
+      #slide2 .ayat span {
+        display: block;
+        margin-top: 18px;
+        font-size: 15px;
+        font-style: italic;
+        color: #5a4a2e;
+        letter-spacing: 0.5px;
+      }
+
+      /* ========== KAPAL (SEMUA SLIDE) ========== */
+      #laut {
+        position: relative;
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        margin-top: 40px;
+        z-index: 2;
+      }
+      .kapal {
+        position: absolute;
+        bottom: 10px;
+        left: -150px;
+        width: 120px;
+        animation: jalanKapal 14s linear infinite;
+      }
+      @keyframes jalanKapal {
+        from {
+          left: -150px;
+        }
+        to {
+          left: 110%;
+        }
+      }
+
+      /* ========== FRAME BULAT SLIDE 3 ========== */
+      .circle-frame img {
+        width: 280px;
+        border-radius: 140px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ========== SLIDE 3 Style ========== */
+      #slide3 {
+        background: url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #f7f7f7;
+      }
+      #slide3 .ayat {
+        margin-top: 25px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #2e2e2e;
+      }
+      #slide3 img {
+        max-width: 320px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+      #slide3 h2 {
+        font-weight: 600;
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+      #slide3 p {
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+      #slide3 a {
+        display: inline-block;
+        background: #a65b4b;
+        color: #fff;
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+
+      /* -------------- SLIDE 4 STYLE -------------- */
+      #slide4 {
+        background: url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover no-repeat;
+        background-size: cover;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #2e2e2e;
+        padding: 40px;
+        overflow-y: auto;
+        scroll-snap-align: start;
+      }
+      #slide4 > div {
+        max-width: 600px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+      }
+      #slide4 h3 {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #a65b4b;
+      }
+      #slide4 p {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+      #slide4 strong {
+        font-weight: 600;
+      }
+
+      /* Countdown Box */
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
+      .countdown-box {
+        background-color: #a65b4b;
+        color: #fff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        min-width: 70px;
+        user-select: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .countdown-number {
+        font-size: 32px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        line-height: 1;
+      }
+      .countdown-label {
+        font-size: 14px;
+        margin-top: 5px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+      }
+
+      /* SLIDE 7 FORM & KOMENTAR - WARNA GELAP & EMAS */
+      #slide7 {
+        background: url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover no-repeat;
+        padding: 40px 20px;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        scroll-snap-align: start;
+        color: #faf9f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #slide7 > div {
+        max-width: 340px;
+        width: 100%;
+        background: rgba(250, 248, 248, 0.85);
+        border-radius: 20px;
+        padding: 25px 30px;
+        box-shadow: 0 15px 25px rgba(12, 11, 11, 0.5);
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+      }
+
+      #slide7 label {
+        display: block;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: left;
+        color: #040404;
+      }
+
+      #slide7 input[type="text"],
+      #slide7 select,
+      #slide7 textarea {
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1.5px solid #6c5939;
+        background: #f6f2f2;
+        color: #020202;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        outline: none;
+      }
+
+      #slide7 select {
+        cursor: pointer;
+      }
+
+      #slide7 textarea {
+        resize: vertical;
+      }
+
+      #slide7 button[type="submit"] {
+        background-color: #f1efea;
+        color: #0d0d0d;
+        padding: 14px 0;
+        border: none;
+        border-radius: 25px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      #slide7 button[type="submit"]:hover {
+        background-color: #070707;
+      }
+
+      #slide7 .thankyou-msg {
+        color: #060606;
+        font-style: italic;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      #commentsContainer {
+        margin-top: 25px;
+        max-height: 280px;
+        overflow-y: auto;
+        text-align: left;
+        font-family: "Poppins", monospace;
+        font-size: 15px;
+        color: #040404;
+      }
+
+      #commentsContainer p {
+        color: #050505;
+        font-style: italic;
+      }
+
+      #commentsContainer div.comment {
+        background: #f7f3f3;
+        border-radius: 12px;
+        padding: 10px 16px;
+        margin-bottom: 14px;
+        white-space: pre-wrap;
+      }
+
+      #commentsContainer span.name {
+        color: #030303;
+        font-weight: 600;
+      }
+
+      #commentsContainer span.status {
+        color: #0c0c0c;
+        font-style: italic;
+        margin-left: 6px;
+      }
+
+      #commentsContainer small.timestamp {
+        color: #060606;
+        font-size: 12px;
+        display: block;
+        margin-top: 6px;
+      }
+      /* Tombol dengan ikon horizontal */
+      .btn-custom {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #a7988f; /* Warna cokelat khas gambar */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-custom:hover,
+      .btn-custom:focus {
+        background-color: #8f7e75; /* Warna lebih gelap saat hover/fokus */
+        outline: none;
+      }
+
+      .btn-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        filter: brightness(0) invert(1); /* Buat ikon jadi putih jika ikon gelap */
+      }
+
+      /* Responsif untuk layar kecil (HP) */
+      @media screen and (max-width: 480px) {
+        .btn-custom {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+        .btn-icon {
+          width: 16px;
+          height: 16px;
+        }
+        /* Container tombol agar fleksibel dan wrap di HP */
+        div[style*="flex-wrap: wrap;"] {
+          justify-content: center;
+          gap: 10px;
+        }
+      }
+      /* ================= PREMIUM FALL ANIMATION ================= */
+      .fall {
+        opacity: 0;
+        transform: translateY(-90px);
+        transition:
+          opacity 1s ease-out,
+          transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: transform, opacity;
+      }
+
+      .fall.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Foto sedikit lebih dramatis */
+      .fall.photo {
+        transform: translateY(-120px) scale(0.96);
+      }
+
+      .fall.photo.show {
+        transform: translateY(0) scale(1);
+      }
+      /* ================= SLIDE 3 PREMIUM GLASS ================= */
+      #slide3 {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("Undangan Pernikahan Sederhana Biru Putih.png") center/cover no-repeat;
+      }
+
+      /* Kotak kaca */
+      .glass-box {
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 24px;
+        padding: 30px 26px;
+        max-width: 360px;
+        width: 100%;
+        box-shadow:
+          0 8px 30px rgba(0, 0, 0, 0.35),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        z-index: 10;
+      }
+
+      /* Foto lebih elegan */
+      .glass-box img {
+        max-width: 260px;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Nama */
+      .glass-box h2 {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      /* Deskripsi */
+      .glass-box p {
+        color: #f1f1f1;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+      }
+      /* ===== TEKS TAMU UNDANGAN (COVER) ===== */
+      .cover-to {
+        margin-top: 18px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+      }
+
+      .cover-to span {
+        display: block;
+        margin-top: 6px;
+        font-weight: 600;
+        font-size: 17px;
+        letter-spacing: 1px;
+      }
+      /* ================= RESPONSIVE SLIDE 3 (HP) ================= */
+      @media screen and (max-width: 480px) {
+        #slide3 {
+          padding: 30px 16px;
+        }
+
+        /* Glass box diperkecil */
+        #slide3 .glass-box {
+          padding: 22px 18px;
+          border-radius: 20px;
+          max-width: 100%;
+        }
+
+        /* FOTO PENGANTIN */
+        #slide3 .glass-box img {
+          max-width: 200px; /* <-- INI KUNCI UTAMA */
+          width: 100%;
+          height: auto;
+          border-radius: 16px;
+          margin-bottom: 18px;
+        }
+
+        /* Nama pengantin */
+        #slide3 .glass-box h2 {
+          font-size: 20px;
+          line-height: 1.3;
+        }
+
+        /* Deskripsi orang tua */
+        #slide3 .glass-box p {
+          font-size: 14px;
+          line-height: 1.5;
+          margin-bottom: 16px;
+        }
+
+        /* Pohon & kapal tetap aman */
+        #slide3 .tree-coconut {
+          width: 110px;
+          bottom: 5px;
+          right: 5px;
+        }
+
+        #slide3 .kapal {
+          width: 95px;
+        }
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden">
+    <!-- AUDIO -->
+    <audio id="bgm" loop>
+      <source src="ssstik.io_1766758806926.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- COVER -->
+    <section id="cover" class="active">
+      <h2>THE WEDDING OF</h2>
+      <h1>Didin & Fadillah</h1>
+
+      <div class="cover-to">
+        Kepada Yth.<br />
+        <span>Tamu Undangan</span>
+      </div>
+
+      <button class="btn" onclick="openInvitation()">Open Invitation</button>
+
+      <div id="laut">
+        <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+      </div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section id="slide2" class="locked">
+      <div class="frame">
+        <img src="poto2-removebg-preview.png" alt="foto pengantin" />
+      </div>
+
+      <div class="ayat">
+        Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
+        <span>Surah Ar-Ruum : 21</span>
+      </div>
+
+      <div id="laut">
+        <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+      </div>
+
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section id="slide3" class="locked">
+      <div class="glass-box">
+        <img src="Biru_dan_Putih_Ilustrasi_Lucu_Undang_Pernikahan1-removebg-preview.png" alt="foto pengantin" />
+
+        <h2>Didin Safrudin</h2>
+        <p>
+          Putra Bungsu Dari<br />
+          Bapak K.H Hasan Bisri & Ibu Ustadzah Utih
+        </p>
+
+        <h2>Siti Nurhaliyatul Fadillah</h2>
+        <p>
+          Putri Pertama<br />
+          Bapak H.Entis & Ibu Ustadzah Lilis Syuaibah
+        </p>
+      </div>
+
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+      <div id="laut">
+        <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+      </div>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section id="slide4" class="locked">
+      <div>
+        <h3>Detail Acara</h3>
+        <p>
+          Kamis, 05 Februari 2026<br />
+          Pukul 08.00 WIB<br />
+          <strong>Kediaman Mempelai Pria</strong><br />
+          Sukajaya 003/001 Desa Singabraja,<br />
+          Kec. Tenjo, Kab. Bogor - Jawa Barat
+        </p>
+
+        <div class="countdown-container">
+          <div class="countdown-box">
+            <div id="days" class="countdown-number">09</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-box">
+            <div id="hours" class="countdown-number">22</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-box">
+            <div id="minutes" class="countdown-number">30</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-box">
+            <div id="seconds" class="countdown-number">00</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+      </div>
+
+      <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+    </section>
+    <!-- SLIDE 5 -->
+    <section
+      id="slide5"
+      class="locked"
+      style="
+        position: relative;
+        background: url(&quot;Undangan Pernikahan Sederhana Biru Putih.png&quot;) center/cover no-repeat;
+        padding: 40px 20px;
+        overflow-y: auto;
+        min-height: 100vh;
+        font-family: &quot;Poppins&quot;, sans-serif;
+        scroll-snap-align: start;
+        color: #2e2e2e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="max-width: 340px; width: 100%; background: img rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 15px; box-shadow: 0 15px 25px rgb(0 0 0 / 0.2); text-align: center; position: relative; z-index: 10">
+        <iframe src="https://www.google.com/maps?q=-6.3415815,106.4379733&output=embed" width="320" height="280" style="border: 0; border-radius: 15px" allowfullscreen loading="lazy"> </iframe>
+
+        <p style="font-family: &quot;Poppins&quot;, sans-serif; font-size: 14px; color: #f8f2f2; margin: 18px 0 12px; line-height: 1.5">
+          Kediaman Mempelai Pria<br />
+          Kp. Sukajaya 003/001 Desa Singabraja,<br />
+          Kec. Tenjo, Kab. Bogor - Jawa Barat
+        </p>
+
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=-6.3415815,106.4379733&travelmode=motorcycle"
+          target="_blank"
+          style="
+            display: inline-block;
+            background-color: #8b3a3a;
+            color: #fff;
+            padding: 10px 24px;
+            font-family: &quot;Poppins&quot;, sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgb(139 58 58 / 0.6);
+            transition: background-color 0.3s;
+          "
+          onmouseover="this.style.backgroundColor = '#a65b4b'"
+          onmouseout="this.style.backgroundColor = '#8b3a3a'"
+        >
+          Petunjuk Ke Lokasi
+        </a>
+      </div>
+
+      <div id="laut" style="position: absolute; bottom: 25px; left: 0; width: 100%; height: 160px; overflow: hidden; z-index: 5">
+        <img src="kapal-removebg-preview.png" alt="kapal" class="kapal" style="position: absolute; bottom: 10px; left: -150px; width: 120px; animation: jalanKapal 14s linear infinite" />
+      </div>
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+    </section>
+    <!-- SLIDE 6 -->
+    <section
+      id="slide6"
+      class="locked"
+      style="
+        background: url(&quot;Undangan Pernikahan Sederhana Biru Putih.png&quot;) center/cover no-repeat;
+        padding: 40px 20px;
+        overflow-y: auto;
+        min-height: 100vh;
+        font-family: &quot;Poppins&quot;, sans-serif;
+        scroll-snap-align: start;
+        color: #2e2e2e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <div style="max-width: 340px; width: 100%; background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 20px; box-shadow: 0 15px 25px rgb(0 0 0 / 0.2); text-align: center; position: relative; z-index: 10">
+        <h3 style="font-style: italic; font-weight: 400; font-size: 28px; margin-bottom: 15px; color: #a65b4b">Wedding Gift</h3>
+
+        <p style="font-weight: 400; font-size: 16px; margin-bottom: 25px; line-height: 1.6">Terima kasih telah menambah semangat kegembiraan pernikahan kami dengan kehadiran dan hadiah indah Anda.</p>
+
+        <div style="background: #f9f9f9; border-radius: 15px; padding: 20px; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 25px; text-align: left">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px">
+            <div style="width: 40px; height: 30px; background: linear-gradient(45deg, #e3b145, #b68a36); border-radius: 4px"></div>
+            <div style="font-weight: 700; font-family: &quot;Poppins&quot;, monospace">DANA</div>
+            <img src="dana.png" alt="DANA" style="height: 24px; margin-left: auto" />
+          </div>
+          <div id="bri-account" style="font-family: monospace; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px">085718443970</div>
+          <button class="btn copy-btn" data-account="085718443970" style="background: #a65b4b; padding: 8px 20px; border: none; border-radius: 20px; color: #fff; font-size: 14px; cursor: pointer">Salin Rekening</button>
+          <div style="font-family: monospace; font-size: 14px; margin-top: 6px">Didin Safrudin</div>
+        </div>
+
+        <button id="btn-confirmation" class="btn" style="background: #060606; margin-top: 10px; width: 100%">Konfirmasi Bukti Transfer</button>
+      </div>
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+      <div id="laut">
+        <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+      </div>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section id="slide7" class="locked">
+      <div>
+        <label for="nama">Silakan isi form berikut untuk konfirmasi kehadiran Anda:</label>
+
+        <form id="formUcapan" autocomplete="off" style="display: flex; flex-direction: column; gap: 14px">
+          <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+
+          <select id="kehadiran" name="kehadiran" required>
+            <option value="" disabled selected>Apakah Anda hadir?</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+
+          <textarea id="komentar" name="komentar" rows="4" placeholder="Pesan / Doa untuk pengantin" required></textarea>
+
+          <div class="thankyou-msg">Terima kasih atas konfirmasi & ucapannya <span>&#10084;&#65039;</span></div>
+
+          <button type="submit">Kirim</button>
+        </form>
+
+        <div id="commentsContainer">
+          <p>Belum ada ucapan.</p>
+        </div>
+      </div>
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+
+      <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+    </section>
+
+    <!-- POHON KELAPA Pojok kanan bawah -->
+    <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+    <!-- SLIDE 8 -->
+    <section
+      id="slide8"
+      class="locked"
+      style="
+        position: relative;
+        background: url(&quot;Undangan Pernikahan Sederhana Biru Putih.png&quot;) center/cover no-repeat;
+        min-height: 100vh;
+        padding: 40px 20px;
+        font-family: &quot;Poppins&quot;, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        scroll-snap-align: start;
+        overflow-y: auto;
+        box-sizing: border-box;
+      "
+    >
+      <div style="max-width: 400px; background: rgba(0, 0, 0, 0.45); padding: 30px; border-radius: 20px">
+        <p style="font-size: 18px; line-height: 1.6">
+          Merupakan suatu kebahagiaan dan kehormatan bagi kami,
+          <br /><strong>apabila Bapak/Ibu/Saudara/i berkenan hadir dan</strong><br />
+          memberikan do'a restu kepada kedua mempelai.
+        </p>
+
+        <p style="font-weight: 600; font-style: italic; font-size: 16px; margin: 15px 0 10px">
+          <span style="text-decoration: underline">Hormat Kami Yang Mengundang</span><br />
+          <span style="color: #070707; font-weight: 700">Didin & Fadillah</span>
+        </p>
+
+        <p style="margin: 20px 0 15px; font-size: 14px; font-style: italic; color: #ddd">Made With Care and Love By Nrfaizz__</p>
+
+        <!-- Sosial media buttons -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0">
+          <button class="social-btn" data-url="https://wa.me/085778444764" aria-label="WhatsApp" style="background: none; border: none; cursor: pointer">
+            <img src="wa).png" alt="WhatsApp" style="width: 40px; height: 40px" />
+          </button>
+          <button class="social-btn" data-url="https://instagram.com/nrfaizz____" aria-label="Instagram" style="background: none; border: none; cursor: pointer">
+            <img src="instagram.jpeg" alt="Instagram" style="width: 40px; height: 40px" />
+          </button>
+        </div>
+
+        <p style="font-weight: 600; color: #0e0e0e; margin-top: 10px">By Beranda</p>
+
+        <button id="backToCover" class="btn" style="margin-top: 25px; background: #080808; padding: 12px 24px; font-size: 16px; border-radius: 30px">Kembali ke Cover</button>
+      </div>
+      <!-- Tombol Navigasi Mengambang Bawah -->
+      <div id="floating-bottom-nav">
+        <button class="btn-floating" onclick="scrollToSection('slide4')" aria-label="Acara">
+          <img src="icon-acara.png" alt="Klik" class="btn-floating-icon" />
+          <span>Acara</span>
+        </button>
+        <button class="btn-floating" onclick="scrollToSection('slide5')" aria-label="Galeri">
+          <img src="icon-galeri.png" alt="Klik" class="btn-floating-icon" />
+          <span>Maps</span>
+        </button>
+        <button class="btn-floating" onclick="scrollToSection('slide7')" aria-label="Ucapan">
+          <img src="icon-ucapan.png" alt="Klik" class="btn-floating-icon" />
+          <span>Ucapan</span>
+        </button>
+      </div>
+      <img src="phnkelapa-removebg-preview.png" class="tree-coconut" alt="pohon kelapa" />
+      <div id="laut">
+        <img src="kapal-removebg-preview.png" class="kapal" alt="kapal" />
+      </div>
+    </section>
+
+    <script>
+      const bgm = document.getElementById("bgm");
+
+      function openInvitation() {
+        bgm.play();
+        document.body.style.overflow = "auto";
+
+        document.querySelectorAll(".locked").forEach((s) => s.classList.remove("locked"));
+        document.getElementById("slide2").scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Countdown Akad Nikah
+      const akadDate = new Date("February 05, 2026 09:00:00 GMT+0700");
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = akadDate.getTime() - now;
+
+        if (distance < 0) {
+          document.getElementById("days").textContent = "09";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          clearInterval(interval);
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, "0");
+        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+      }
+
+      const interval = setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Copy rekening
+      document.querySelectorAll(".copy-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accountNumber = button.getAttribute("data-account");
+          navigator.clipboard.writeText(accountNumber).then(() => {
+            button.textContent = "Tersalin!";
+            setTimeout(() => {
+              button.textContent = "Salin Rekening";
+            }, 2000);
+          });
+        });
+      });
+
+      // Konfirmasi bukti transfer
+      document.getElementById("btn-confirmation").addEventListener("click", () => {
+        alert("Silakan kirim bukti transfer ke kontak yang tersedia.");
+      });
+
+      // Penanganan form komentar & kehadiran
+      const comments = [];
+      const formUcapan = document.getElementById("formUcapan");
+      const commentsContainer = document.getElementById("commentsContainer");
+
+      function renderComments() {
+        commentsContainer.innerHTML = "";
+        if (comments.length === 0) {
+          commentsContainer.innerHTML = "<p>Belum ada ucapan.</p>";
+          return;
+        }
+
+        comments.forEach(({ nama, kehadiran, komentar, timestamp }) => {
+          const commentEl = document.createElement("div");
+          commentEl.classList.add("comment");
+
+          commentEl.innerHTML = `
+        <span class="name">${nama}</span><span class="status">(${kehadiran})</span>
+        <p>${komentar}</p>
+        <small class="timestamp">${timestamp}</small>
+      `;
+
+          commentsContainer.appendChild(commentEl);
+        });
+      }
+
+      formUcapan.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = this.nama.value.trim();
+        const kehadiran = this.kehadiran.value;
+        const komentar = this.komentar.value.trim();
+
+        if (!nama || !kehadiran || !komentar) {
+          alert("Mohon lengkapi semua kolom.");
+          return;
+        }
+
+        const timestamp = new Date().toLocaleString("id-ID", {
+          dateStyle: "short",
+          timeStyle: "medium",
+        });
+
+        comments.push({ nama, kehadiran, komentar, timestamp });
+
+        renderComments();
+
+        alert(`Terima kasih atas ucapan Anda, ${nama}!`);
+
+        this.reset();
+      });
+      // Fungsi membuka link sosial media ketika tombol diklik
+      document.querySelectorAll(".social-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const url = button.getAttribute("data-url");
+          if (url) {
+            window.open(url, "_blank");
+          }
+        });
+      });
+
+      // Tombol kembali ke cover
+      document.getElementById("backToCover").addEventListener("click", () => {
+        document.getElementById("cover").scrollIntoView({ behavior: "smooth" });
+      });
+      function scrollToSection(id) {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+      /* ================= PREMIUM WEDDING FALL ANIMATION ================= */
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedSelectors = `
+    h1, h2, h3, h4, h5, h6,
+    p, span, a, button,
+    img, iframe,
+    .frame, .ayat, .countdown-box,
+    input, textarea, select
+  `;
+
+        document.querySelectorAll("section").forEach((section) => {
+          const elements = section.querySelectorAll(animatedSelectors);
+
+          elements.forEach((el, index) => {
+            // Abaikan elemen animasi background
+            if (el.classList.contains("kapal") || el.classList.contains("tree-coconut") || el.closest("#floating-bottom-nav")) return;
+
+            el.classList.add("fall");
+
+            // Foto dapat class khusus
+            if (el.tagName === "IMG" || el.tagName === "IFRAME") {
+              el.classList.add("photo");
+            }
+
+            // Delay bertahap (cinematic)
+            el.style.transitionDelay = `${index * 1.5}s`;
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          {
+            threshold: 0.18,
+          },
+        );
+
+        document.querySelectorAll(".fall").forEach((el) => observer.observe(el));
+      });
+      el.style.transitionDelay = `${index * 0.08}s`;
+    </script>
+  </body>
+</html>
